@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Variables de entorno y credenciales
+.env
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

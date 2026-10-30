@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkify | Acortador de enlaces</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">↗</span>
+            Linkify
+        </div>
+        <span class="nav-text">ACORTADOR DE ENLACES</span>
+    </header>
+
+    <main class="container">
+
+        <div class="intro">
+            <span class="tag">TU HERRAMIENTA DE ENLACES</span>
+
+            <h1>Enlaces más cortos,<br>compartir más fácil.</h1>
+
+            <p>
+                Simplifica tus direcciones web y comparte tus enlaces
+                de una manera rápida y sencilla.
+            </p>
+        </div>
+
+        <section class="shortener-card">
+
+            <h2>Acorta tu enlace</h2>
+            <p class="card-description">
+                Introduce la URL que deseas convertir.
+            </p>
+
+            <form id="shorten-form">
+
+                <label for="original-url">Enlace original</label>
+
+                <input
+                    type="url"
+                    id="original-url"
+                    placeholder="https://ejemplo.com/mi-enlace"
+                    required
+                >
+
+                <button type="submit">
+                    Acortar enlace <span>→</span>
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+            <div id="result" class="result" hidden>
+                <p>Tu enlace corto está listo:</p>
+
+                <a
+                    id="short-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                ></a>
+
+                <button id="copy-button" type="button">
+                    Copiar enlace
+                </button>
+            </div>
+
+            <div class="card-footer">
+                <span>✓</span> Fácil, rápido y práctico
+            </div>
+
+        </section>
+
+        <section class="features">
+
+            <div>
+                <span class="feature-icon">⚡</span>
+                <h3>Rápido</h3>
+                <p>Crea enlaces en segundos.</p>
+            </div>
+
+            <div>
+                <span class="feature-icon">🔗</span>
+                <h3>Sencillo</h3>
+                <p>Comparte enlaces fácilmente.</p>
+            </div>
+
+            <div>
+                <span class="feature-icon">☁</span>
+                <h3>En la nube</h3>
+                <p>Almacenamiento con AWS.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Linkify © 2026 | Proyecto académico
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
