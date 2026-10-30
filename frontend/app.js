@@ -49,10 +49,27 @@ form.addEventListener("submit", async (event) => {
 
 // Copiar enlace corto
 copyButton.addEventListener("click", async () => {
+    const textToCopy = shortLink.href;
+
     try {
-        await navigator.clipboard.writeText(shortLink.href);
-        message.textContent = "¡Enlace copiado!";
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(textToCopy);
+        } else {
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+
+            const copied = document.execCommand("copy");
+            textArea.remove();
+
+            if (!copied) {
+                throw new Error("No se pudo copiar");
+            }
+        }
+
+        message.textContent = "¡Enlace copiado correctamente!";
     } catch (error) {
-        message.textContent = "No se pudo copiar el enlace.";
+        message.textContent = "No se pudo copiar. Puedes seleccionar el enlace manualmente.";
     }
 });
